@@ -12,5 +12,11 @@ export const ShoppingList = {
             qty: '1',
             unit: 'box'
         },
+        {
+            name: 'King Mattress',
+            store: 'Macy\'s',
+            qty: '1',
+            unit: ''
+        },
     ]
 }

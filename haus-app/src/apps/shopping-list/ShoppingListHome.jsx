@@ -49,12 +49,20 @@ const TitleLine = styled.hr`
 
 /* SORT and ADD Buttons */
 const ActionBlock = styled.div`
+  width: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid ${Colors.black.tran};
+
+  @media (max-width: 500px) {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px auto inherit;
+  }
 `;
 
 const FilterByBlock = styled.div`
@@ -94,29 +102,40 @@ const Button = styled.button`
     background-color: ${Colors.jelly[1]};
     color: ${Colors.jelly[0]};
   };
+
+  @media (max-width: 500px) {
+    margin: ${props=>props.action !== "filter" && "20px auto 0px"}
+  }
 `;
 
 /* DISPLAY block */
 const DisplayBlock = styled.div`
   display: flex;
   flex-direction: column;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid ${Colors.black.tran};
 `;
 
 const DisplayTableHeader = styled.div`
+  border-radius: 10px 10px 0px 0px;
+
   display: flex;
-  padding: 5px 10px 0px;
-  font-size: 20px;
-  background-color: ${Colors.jelly[1]};
+  padding: 10px 10px 0px;
+  font-size: 16px;
+  #background-color: ${Colors.jelly[1]};
+  background-image: linear-gradient(to bottom, ${Colors.white.tran}, ${Colors.jelly[1]}, ${Colors.jelly[1]});
   justify-content: space-between;
   align-items: center;
   column-gap: 10px;
-  font-weight: 500;
-  color: ${Colors.white.true}
+  font-weight: 700;
+  color: ${Colors.white.true};
+  margin-bottom: 0px;
 `;
 const DisplayTableRow = styled.div`
   display: flex;
   padding: 10px;
-  font-size: 16px;
+  font-size: 14px;
   background-color: ${Colors.white.opaq};
   justify-content: space-between;
   align-items: center;
@@ -124,31 +143,34 @@ const DisplayTableRow = styled.div`
 
   &:nth-child(odd){
     background-color: ${Colors.black.tran};
-  }
+  };
+  &:last-child{
+    border-radius: 0px 0px 10px 10px;
+  };
 `;
 const DTItem = styled.div`
   text-align: center;
   flex: 3;
-  padding-bottom: 5px;
-  border-bottom: ${props=>props.row === "head" ? `3px solid ${Colors.jelly[0]}` : "none"};
+  padding-bottom: 2px;
+  border-bottom: ${props=>props.row === "head" ? `5px solid ${Colors.jelly[0]}` : "none"};
 `;
 
 const DTQty = styled.div`
-  padding-bottom: 5px;
+  padding-bottom: 2px;
   text-align: center;
-  border-bottom: ${props=>props.row === "head" ? `3px solid ${Colors.jelly[0]}` : "none"};
+  border-bottom: ${props=>props.row === "head" ? `5px solid ${Colors.jelly[0]}` : "none"};
   flex: 1;
 `;
 const DTStore = styled.div`
-  border-bottom: ${props=>props.row === "head" ? `3px solid ${Colors.jelly[0]}` : "none"};
-  padding-bottom: 5px;
+  border-bottom: ${props=>props.row === "head" ? `5px solid ${Colors.jelly[0]}` : "none"};
+  padding-bottom: 2px;
   text-align: center;
   flex: 2;
 `;
 const DTRemove = styled.div`
-  border-bottom: ${props=>props.row === "head" ? `3px solid ${Colors.jelly[0]}` : "none"};
-  padding-bottom: 5px;
-  flex: 1;
+  border-bottom: ${props=>props.row === "head" ? `5px solid ${Colors.jelly[0]}` : "none"};
+  padding-bottom: 2px;
+  flex: .5;
   text-align: center;
 `;
 
@@ -180,7 +202,7 @@ const ShoppingListHome = () => {
               <DTQty row="head">Qty</DTQty>
               <DTItem row="head">Item</DTItem>
               <DTStore row="head">Store</DTStore>
-              <DTRemove row="head">Remove</DTRemove>
+              <DTRemove row="head">Rmv</DTRemove>
             </DisplayTableHeader>
             <DisplayTableRow>
               <DTQty>{ShoppingList.items[0].qty} {ShoppingList.items[0].unit}</DTQty>
@@ -192,6 +214,12 @@ const ShoppingListHome = () => {
               <DTQty>{ShoppingList.items[1].qty} {ShoppingList.items[1].unit}</DTQty>
               <DTItem>{ShoppingList.items[1].name}</DTItem>
               <DTStore>{ShoppingList.items[1].store}</DTStore>
+              <DTRemove><input type="checkbox"/></DTRemove>
+            </DisplayTableRow>
+            <DisplayTableRow>
+              <DTQty>{ShoppingList.items[2].qty} {ShoppingList.items[2].unit}</DTQty>
+              <DTItem>{ShoppingList.items[2].name}</DTItem>
+              <DTStore>{ShoppingList.items[2].store}</DTStore>
               <DTRemove><input type="checkbox"/></DTRemove>
             </DisplayTableRow>
           </DisplayBlock>

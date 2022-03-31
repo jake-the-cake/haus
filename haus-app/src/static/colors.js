@@ -2,7 +2,7 @@ export const Colors = {
     jelly: ['#071621','#126170'],
     white: {
         true: '#fff',
-        opaq: 'rgba(255,255,255,0.9)',
+        opaq: 'rgba(255,255,255,0.85)',
         half: 'rgba(255,255,255,0.5)',
         tran: 'rgba(255,255,255,0.2)',
     },
