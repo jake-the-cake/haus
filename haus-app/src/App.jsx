@@ -6,6 +6,6 @@ function App() {
   return (
       <ShoppingListHome/>
   );
-}
+};
 
 export default App;
