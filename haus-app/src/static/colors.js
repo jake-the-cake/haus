@@ -18,5 +18,13 @@ export const Colors = {
         opaq: 'rgba(255,255,0,0.8)',
         half: 'rgba(255,255,0,0.5)',
         tran: 'rgba(255,255,0,0.2)',
+        invis: 'rgba(255,255,0,0.1)',
+    },
+    green: {
+        true: '#0f0',
+        opaq: 'rgba(0,255,0,0.8)',
+        half: 'rgba(0,255,0,0.5)',
+        tran: 'rgba(0,255,0,0.2)',
+        invis: 'rgba(0,255,0,0.1)',
     },
 };

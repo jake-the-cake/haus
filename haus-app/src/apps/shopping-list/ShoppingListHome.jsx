@@ -5,12 +5,12 @@ import { Colors } from '../../static/colors';
 import { ShoppingList } from '../../static/fakedata';
 
 const Container = styled.div`
-    background-color: ${Colors.jelly[0]};
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  background-color: ${Colors.jelly[0]};
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const ContentWrapper = styled.div`
@@ -127,7 +127,6 @@ const DisplayBlock = styled.div`
 
 const DisplayTableHeader = styled.div`
   border-radius: 10px 10px 0px 0px;
-
   display: flex;
   padding: 10px 10px 0px;
   font-size: 16px;
@@ -144,13 +143,13 @@ const DisplayTableRow = styled.div`
   display: flex;
   padding: 10px;
   font-size: 14px;
-  background-color: ${Colors.white.opaq};
+  background: linear-gradient(${Colors.yellow.invis},${Colors.yellow.invis}) ${Colors.white.opaq};
   justify-content: space-between;
   align-items: center;
   column-gap: 10px;
 
   &:nth-child(odd){
-    background-color: ${Colors.black.tran};
+    background-color: ${Colors.green.invis};
   };
   &:last-child{
     border-radius: 0px 0px 10px 10px;
@@ -169,12 +168,14 @@ const DTQty = styled.div`
   border-bottom: ${props=>props.row === "head" ? `5px solid ${Colors.jelly[0]}` : "none"};
   flex: 1;
 `;
+
 const DTStore = styled.div`
   border-bottom: ${props=>props.row === "head" ? `5px solid ${Colors.jelly[0]}` : "none"};
   padding-bottom: 2px;
   text-align: center;
   flex: 2;
 `;
+
 const DTRemove = styled.div`
   border-bottom: ${props=>props.row === "head" ? `5px solid ${Colors.jelly[0]}` : "none"};
   padding-bottom: 2px;
