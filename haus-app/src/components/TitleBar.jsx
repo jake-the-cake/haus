@@ -14,7 +14,7 @@ const Container = styled.div`
 
 const ContentWrapper = styled.div`
     width: calc(85% + 40px);
-    padding-top: 10px;
+    padding-top: 5px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -36,11 +36,12 @@ const TitleLabel = styled.div`
 
 const ControlBlock = styled.div`
     display: flex;
-    column-gap: 10px;
+    column-gap: 5px;
 `;
 
 const ControlLink = styled.a`
-    padding-top: 5px;
+    padding-top: 6px;
+    text-transform: uppercase;
     cursor: pointer;
     color: ${Colors.white.true};
     letter-spacing: 1.5px;
