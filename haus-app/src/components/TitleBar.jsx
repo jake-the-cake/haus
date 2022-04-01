@@ -48,7 +48,7 @@ const ControlLink = styled.a`
     font-size: 14px;
 
     &:hover{
-        color: ${Colors.yellow.soft};
+        color: ${Colors.yellow.lemon};
         text-decoration: none;
     }
 `;

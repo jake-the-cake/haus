@@ -14,7 +14,7 @@ export const Colors = {
     },
     yellow: {
         true: '#ff0',
-        soft: '#eff31f',
+        lemon: '#eff31f',
         opaq: 'rgba(255,255,0,0.8)',
         half: 'rgba(255,255,0,0.5)',
         tran: 'rgba(255,255,0,0.2)',
