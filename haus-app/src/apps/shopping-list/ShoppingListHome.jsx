@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import TitleBar from '../../components/TitleBar';
 import { Colors } from '../../static/colors';
 import { ShoppingList } from '../../static/fakedata';
 
@@ -7,13 +8,14 @@ const Container = styled.div`
     background-color: ${Colors.jelly[0]};
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 `;
 
 const ContentWrapper = styled.div`
   width: 85%;
-  margin: 20px auto;
+  margin: 65px auto;
   padding: 10px 20px;
   background-color: ${Colors.white.opaq};
   max-width: 650px;
@@ -72,21 +74,31 @@ const FilterByBlock = styled.div`
 `;
 
 const FilterByLabel = styled.span`
+  font-size: 12px;
+  padding-bottom: 5px;
+
 `;
 
 const FilterBySelect = styled.select`
-
+  border: none;
+  padding: 5px;
+  color: ${Colors.jelly[0]};
+  font-weight: 700;
+  background: linear-gradient(${Colors.white.half}, ${Colors.white.half}) ${Colors.jelly[1]};
 `;
 
 const FilterByOption = styled.option`
-
 `;
 
 const AddButtonBlock = styled.div`
+  @media (max-width: 500px) {
+    margin: 20px auto 0px;
+  };
 `;
 
 const Button = styled.button`
   text-transform: uppercase;
+  cursor: pointer;
   padding: ${props=>props.action === "filter" ? "5px" : "10px 15px"};
   font-size: ${props=>props.action === "filter" ? "12px" : "18px"};
   border: ${props=>props.action === "filter" ? "2px" : "3px"} solid transparent;
@@ -102,10 +114,6 @@ const Button = styled.button`
     background-color: ${Colors.jelly[1]};
     color: ${Colors.jelly[0]};
   };
-
-  @media (max-width: 500px) {
-    margin: ${props=>props.action !== "filter" && "20px auto 0px"}
-  }
 `;
 
 /* DISPLAY block */
@@ -177,6 +185,7 @@ const DTRemove = styled.div`
 const ShoppingListHome = () => {
   return (
     <Container>
+      <TitleBar />
         <ContentWrapper>
           <TitleBlock>
             <Title>Shopping List</Title>
@@ -184,12 +193,18 @@ const ShoppingListHome = () => {
           </TitleBlock>
           <ActionBlock>
             <FilterByBlock>
-              <FilterByLabel>Filter By:</FilterByLabel>
+              <FilterByLabel>Filters:</FilterByLabel>
               <FilterBySelect>
                 <FilterByOption selected disabled>Store</FilterByOption>
                 <FilterByOption>All Stores</FilterByOption>
                 <FilterByOption>Target</FilterByOption>
                 <FilterByOption>Wegmans</FilterByOption>
+              </FilterBySelect>
+              <FilterBySelect>
+                <FilterByOption selected disabled>Category</FilterByOption>
+                <FilterByOption>Food</FilterByOption>
+                <FilterByOption>Cleaning</FilterByOption>
+                <FilterByOption>Baby</FilterByOption>
               </FilterBySelect>
               <Button action="filter">Filter</Button>
             </FilterByBlock>
