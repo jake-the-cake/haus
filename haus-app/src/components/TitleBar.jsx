@@ -40,15 +40,26 @@ const ControlBlock = styled.div`
 `;
 
 const ControlLink = styled.a`
+    padding-top: 5px;
     cursor: pointer;
-    #text-transform: uppercase;
     color: ${Colors.white.true};
     letter-spacing: 1.5px;
     font-weight: 700;
     font-size: 14px;
+
+    &:hover{
+        color: ${Colors.yellow.soft};
+        text-decoration: none;
+    }
 `;
 
-const Divider = styled.div``;
+const Divider = styled.p`
+    font-size: 20px;
+    color: ${Colors.jelly[0]};
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px;
+`;
 
 
 const TitleBar = () => {
@@ -67,6 +78,6 @@ const TitleBar = () => {
             </ContentWrapper>
         </Container>
     )
-}
+};
 
-export default TitleBar
+export default TitleBar;
